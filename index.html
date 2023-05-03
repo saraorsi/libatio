@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libatio</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="description" content="Libatio" />
+    <meta property="og:locale" content="en_EN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Libatio – Bar de Vinhos" />
+    <meta property="og:description"
+        content="There is a magic that can only be found in the world of traditions, where creativity is born and thrives" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="Libatio – Bar de Vinhos" />
+    <meta property="og:image" content="./img/facebook-libation.jpeg" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1920" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @font-face {
+            font-family: Monument;
+            src: url(PPMonumentExtended-Bold.ttf);
+        }
+
+        :root {
+            font-size: 14px;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: Monument;
+        }
+
+        body {
+            position: relative;
+            background-color: #292929;
+            color: #FFF799;
+        }
+
+        .galery {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+        }
+
+        .galery-item {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .header,
+        .footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header img {
+            height: 3rem;
+            width: auto;
+        }
+
+        .footer div:nth-child(2) {
+            align-self: flex-end;
+        }
+
+        .footer img {
+            height: 2rem;
+            width: auto;
+        }
+
+        @media (max-width: 800px) {
+            :root {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="galery desktop">
+
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="img/libatio-logo.svg" alt="libatio">
+            </div>
+            <div>
+                bar de vinhos
+            </div>
+        </header>
+        <footer class="footer">
+            <div>
+                info@libatio.pt<br />
+                +351 916 752 866<br /><br />
+                Rua de Vila Franca<br />
+                5050-266, Régua<br />
+                Portugal
+            </div>
+            <div>
+                <a href="https://www.instagram.com/libatio.bardevinhos/" target="_blank">
+                    <img src="img/instagram.svg" alt="instagram">
+                </a>
+            </div>
+        </footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        let images = [];
+
+        if (window.innerWidth > 800) {
+            for (let i = 0; i <= 41; i++) {
+                images.push(`<div class="galery-item" style="background-image: url('img/desktop/libatio-bar-vinho-wine-douro${i + 1}.jpg');"></div>`)
+            }
+
+            const shuffledImages = shuffleArray(images);
+            shuffledImages.forEach(function (item) {
+                $('.galery').append(shuffledImages);
+            })
+        }
+        else {
+            for (let i = 0; i <= 30; i++) {
+                images.push(`<div class="galery-item" style="background-image: url('img/mobile/libatio-bar-vinho-wine-douro-mobile${i + 1}.jpg');"></div>`)
+            }
+
+            const shuffledImages = shuffleArray(images);
+            shuffledImages.forEach(function (item) {
+                $('.galery').append(shuffledImages);
+            })
+        }
+
+
+        $('.galery').slick({
+            autoplay: true,
+            speed: 3000,
+            arrows: false
+        });
+
+
+    </script>
+</body>
+
+</html>
