@@ -174,7 +174,9 @@
         }
         else {
             for (let i = 0; i <= 30; i++) {
+                if(i !== 6){
                 images.push(`<div class="galery-item" style="background-image: url('img/mobile/libatio-bar-vinho-wine-douro-mobile${i + 1}.jpg');"></div>`)
+                }
             }
 
             const shuffledImages = shuffleArray(images);
